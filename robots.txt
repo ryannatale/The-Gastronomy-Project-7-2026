@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_reference/
+
+Sitemap: https://thegastronomyproject.com/sitemap.xml

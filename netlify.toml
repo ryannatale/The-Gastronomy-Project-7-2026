@@ -1,0 +1,207 @@
+[build]
+  publish = "."
+  command = ""           # static; nothing to build
+
+# ---------------------------------------------------------------------------
+# Clean-URL serving (LOCKED naming): each route folder holds a route-labeled
+# HTML file (e.g. /online-heartburn-treatment/online-heartburn-treatment.html)
+# instead of index.html. The site ROOT is the only index.html and Netlify
+# serves it at "/" automatically. The 200 rewrites below map each clean
+# trailing-slash URL to its labeled file so the public URLs stay clean.
+# Generated from the master file tree. A route missing here 404s, so keep this
+# list in sync as new pages are built. Canonicals, internal links, and sitemap
+# entries all stay on the clean trailing-slash URLs, unchanged.
+# Rewrites are evaluated top-down (first match wins), so these specific
+# trailing-slash rules sit ABOVE the trailing-slash canonicalizer at the end.
+# ---------------------------------------------------------------------------
+
+# --- Core ---
+[[redirects]]
+  from = "/how-it-works/"
+  to = "/how-it-works/how-it-works.html"
+  status = 200
+[[redirects]]
+  from = "/about/"
+  to = "/about/about.html"
+  status = 200
+[[redirects]]
+  from = "/pricing/"
+  to = "/pricing/pricing.html"
+  status = 200
+[[redirects]]
+  from = "/faq/"
+  to = "/faq/faq.html"
+  status = 200
+
+# --- Shop-all ---
+[[redirects]]
+  from = "/products/"
+  to = "/products/products.html"
+  status = 200
+
+# --- Commercial / condition landing ---
+[[redirects]]
+  from = "/online-nausea-treatment/"
+  to = "/online-nausea-treatment/online-nausea-treatment.html"
+  status = 200
+[[redirects]]
+  from = "/glp1-nausea-support/"
+  to = "/glp1-nausea-support/glp1-nausea-support.html"
+  status = 200
+[[redirects]]
+  from = "/online-heartburn-treatment/"
+  to = "/online-heartburn-treatment/online-heartburn-treatment.html"
+  status = 200
+[[redirects]]
+  from = "/travel-gut-support/"
+  to = "/travel-gut-support/travel-gut-support.html"
+  status = 200
+
+# --- Brand / education hub ---
+[[redirects]]
+  from = "/why-ginger/"
+  to = "/why-ginger/why-ginger.html"
+  status = 200
+
+# --- Product pages ---
+[[redirects]]
+  from = "/products/ginger-ondansetron/"
+  to = "/products/ginger-ondansetron/ginger-ondansetron.html"
+  status = 200
+[[redirects]]
+  from = "/products/ginger-omeprazole/"
+  to = "/products/ginger-omeprazole/ginger-omeprazole.html"
+  status = 200
+[[redirects]]
+  from = "/products/ginger-famotidine/"
+  to = "/products/ginger-famotidine/ginger-famotidine.html"
+  status = 200
+[[redirects]]
+  from = "/products/g-pack/"
+  to = "/products/g-pack/g-pack.html"
+  status = 200
+[[redirects]]
+  from = "/products/ginger-mastic/"
+  to = "/products/ginger-mastic/ginger-mastic.html"
+  status = 200
+
+# --- Support guides ---
+[[redirects]]
+  from = "/guides/managing-glp1-side-effects/"
+  to = "/guides/managing-glp1-side-effects/managing-glp1-side-effects.html"
+  status = 200
+[[redirects]]
+  from = "/guides/heartburn-vs-acid-reflux/"
+  to = "/guides/heartburn-vs-acid-reflux/heartburn-vs-acid-reflux.html"
+  status = 200
+[[redirects]]
+  from = "/guides/understanding-nausea-support/"
+  to = "/guides/understanding-nausea-support/understanding-nausea-support.html"
+  status = 200
+[[redirects]]
+  from = "/guides/how-doctor-review-works/"
+  to = "/guides/how-doctor-review-works/how-doctor-review-works.html"
+  status = 200
+[[redirects]]
+  from = "/guides/ginger-for-digestive-support/"
+  to = "/guides/ginger-for-digestive-support/ginger-for-digestive-support.html"
+  status = 200
+
+# --- Quiz system ---
+[[redirects]]
+  from = "/quiz/start/"
+  to = "/quiz/start/start.html"
+  status = 200
+[[redirects]]
+  from = "/quiz/nausea-guide/"
+  to = "/quiz/nausea-guide/nausea-guide.html"
+  status = 200
+[[redirects]]
+  from = "/quiz/reflux-guide/"
+  to = "/quiz/reflux-guide/reflux-guide.html"
+  status = 200
+[[redirects]]
+  from = "/quiz/glp1-side-effects/"
+  to = "/quiz/glp1-side-effects/glp1-side-effects.html"
+  status = 200
+[[redirects]]
+  from = "/quiz/take-less-omeprazole/"
+  to = "/quiz/take-less-omeprazole/take-less-omeprazole.html"
+  status = 200
+[[redirects]]
+  from = "/quiz/travel-gut-guide/"
+  to = "/quiz/travel-gut-guide/travel-gut-guide.html"
+  status = 200
+[[redirects]]
+  from = "/results/"
+  to = "/results/results.html"
+  status = 200
+
+# --- Utility / legal ---
+[[redirects]]
+  from = "/privacy/"
+  to = "/privacy/privacy.html"
+  status = 200
+[[redirects]]
+  from = "/terms/"
+  to = "/terms/terms.html"
+  status = 200
+[[redirects]]
+  from = "/hipaa-notice/"
+  to = "/hipaa-notice/hipaa-notice.html"
+  status = 200
+[[redirects]]
+  from = "/pharmacy-disclosure/"
+  to = "/pharmacy-disclosure/pharmacy-disclosure.html"
+  status = 200
+[[redirects]]
+  from = "/contact/"
+  to = "/contact/contact.html"
+  status = 200
+[[redirects]]
+  from = "/login/"
+  to = "/login/login.html"
+  status = 200
+[[redirects]]
+  from = "/thank-you/"
+  to = "/thank-you/thank-you.html"
+  status = 200
+
+# --- Paid landing pages (noindex; not in sitemap) ---
+[[redirects]]
+  from = "/lp/glp1-nausea/"
+  to = "/lp/glp1-nausea/glp1-nausea.html"
+  status = 200
+[[redirects]]
+  from = "/lp/prescription-nausea/"
+  to = "/lp/prescription-nausea/prescription-nausea.html"
+  status = 200
+
+# Canonicalize: add a trailing slash to any path that lacks one (only when no
+# real file matches). Runs LAST so the labeled-file rewrites above win first.
+[[redirects]]
+  from = "/shipping-returns/"
+  to = "/shipping-returns/shipping-returns.html"
+  status = 200
+[[redirects]]
+  from = "/get-started/"
+  to = "/get-started/get-started.html"
+  status = 200
+[[redirects]]
+  from = "/*"
+  to = "/:splat/"
+  status = 301
+  force = false
+
+# --- Headers ---
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
