@@ -58,7 +58,7 @@ button{font-family:inherit}
 header{background:var(--offwhite);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.brand-word{height:46px;width:auto;display:block}
+.brand-word{height:36px;width:auto;display:block}
 .brand .word{font-family:var(--serif);font-weight:600;color:var(--espresso);font-size:16.5px;line-height:1.05;display:none}
 .desk-nav{display:none;align-items:center;gap:2px}
 .navitem{position:relative}
@@ -597,7 +597,10 @@ body{padding-bottom:70px}
 
 /* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
 .senja-embed{max-width:100%;overflow:hidden}
-html{overflow-x:clip}
+html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+/* mobile: logo matches product-page sizing (36px); desktop unchanged at 46px */
+@media(min-width:880px){.brand-word{height:46px}}
 </style>
 </head>
 <body>
