@@ -581,6 +581,10 @@ body{padding-bottom:70px}
 
 /* mobile side-padding fix: restore the .wrap 20px gutter that hero co-classes zeroed out. MOBILE ONLY (<880px); desktop rules untouched. */
 @media (max-width:879px){.hero-inner,.trust-row{padding-left:20px;padding-right:20px}}
+
+/* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
+.senja-embed{max-width:100%;overflow:hidden}
+html{overflow-x:clip}
 </style>
 </head>
 <body>

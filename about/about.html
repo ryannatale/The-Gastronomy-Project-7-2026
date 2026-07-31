@@ -627,6 +627,10 @@ img[src*="dr-natale-black"]{object-position:33% 28%}
 .stickycta .sticky-btn{white-space:nowrap;padding:11px 22px}
 body{padding-bottom:70px}
 @media(max-width:600px){.stickycta .sticky-txt{display:none}.stickycta .sticky-in{padding-left:16px;padding-right:16px}.stickycta .sticky-btn{width:100%;justify-content:center}}
+
+/* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
+.senja-embed{max-width:100%;overflow:hidden}
+html{overflow-x:clip}
 </style>
 </head>
 <body>

@@ -582,6 +582,10 @@ html{scroll-behavior:smooth}
 .founder-q-quote{font-family:var(--serif);font-size:clamp(18px,3.4vw,23px);line-height:1.45;color:var(--espresso);margin:0 0 12px;font-style:normal;font-weight:400}
 .founder-q-attr{font-size:13.5px;font-weight:600;color:var(--amber);margin:0}
 @media(min-width:780px){.founder-q{grid-template-columns:.9fr 1.1fr;gap:38px}.founder-q-photo{aspect-ratio:4/5}}
+
+/* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
+.senja-embed{max-width:100%;overflow:hidden}
+html{overflow-x:clip}
 </style>
 <script type="application/ld+json">
 {
