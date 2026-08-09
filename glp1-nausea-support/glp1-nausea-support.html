@@ -94,13 +94,9 @@ header{background:var(--offwhite);border-bottom:1px solid var(--line)}
 /* ---------- hero (tight on mobile) ---------- */
 .hero{position:relative;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;
-  /* PLACEHOLDER for the real flat-lay (Productsontable5.png). Cowork: set background-image, position center-right. */
-  background:
-    radial-gradient(200px 200px at 68% 44%, rgba(255,184,46,.30), transparent 70%),
-    radial-gradient(230px 230px at 84% 76%, rgba(216,134,9,.18), transparent 72%),
-    linear-gradient(120deg,#F3ECDD 0%, #EFE6D2 55%, #E7DBC0 100%);
-  background-size:cover;background-position:center right}
-.hero-scrim{position:absolute;inset:0;z-index:1;background:rgba(253,250,244,.5)}
+  /* Hero photo: woman at a farmers market, active and energetic. Mobile: full-bleed, centered. Desktop: shifted right (see 880px query) so the copy sits over the darker left. */
+  background:url("../images/Hero4 woman in farmers market GLP1.png") center center/cover no-repeat}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(253,250,244,.87) 0%, rgba(253,250,244,.76) 42%, rgba(253,250,244,.52) 74%, rgba(253,250,244,.3) 100%)}
 .hero-inner{position:relative;z-index:2;padding:16px 0 16px}
 .hero-copy{max-width:620px}
 .hero h1{font-size:clamp(27px,7vw,56px);letter-spacing:-.01em;margin-bottom:9px}
@@ -278,7 +274,8 @@ footer{background:var(--espresso);color:#cdbfa6;padding:42px 0 26px;font-size:13
   .mmenu{display:none!important}
   
   .plan .ptxt{display:inline}
-  .hero-scrim{background:linear-gradient(90deg, rgba(253,250,244,.96) 0%, rgba(253,250,244,.85) 34%, rgba(253,250,244,.15) 60%, rgba(253,250,244,0) 78%)}
+  .hero-bg{background-position:center right}
+  .hero-scrim{background:linear-gradient(90deg, rgba(253,250,244,.94) 0%, rgba(253,250,244,.86) 32%, rgba(253,250,244,.5) 52%, rgba(253,250,244,.12) 66%, rgba(253,250,244,0) 80%)}
   .hero-inner{padding:40px 0 46px;min-height:340px;display:flex;align-items:center}
   .hero h1{margin-bottom:12px}
   .hero p.sub{margin-bottom:16px}
@@ -683,7 +680,7 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 <!-- ===== hero ===== -->
 <section class="hero">
-  <div class="hero-bg" role="img" aria-label="Ginger+ Ondansetron capsules with fresh ginger on a warm cream surface"></div>
+  <div class="hero-bg" role="img" aria-label="A woman shopping at a farmers market, active and energetic in morning light"></div>
   <div class="hero-scrim"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -890,9 +887,9 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="foot-col"><h5>Guides</h5>
         <a href="/guides/managing-glp1-side-effects/">Managing GLP-1 side effects</a>
-        <a href="/guides/heartburn-vs-acid-reflux/">Heartburn vs acid reflux</a>
+        
         <a href="/guides/understanding-nausea-support/">Understanding nausea support</a>
-        <a href="/guides/how-doctor-review-works/">How doctor review works</a>
+        
       </div>
       <div class="foot-col"><h5>Company</h5>
         <a href="/about/">About</a><a href="/why-ginger/">Why ginger</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>

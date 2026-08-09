@@ -564,6 +564,7 @@ html{scroll-behavior:smooth}
 /* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
 .senja-embed{max-width:100%;overflow:hidden}
 html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.buy-card{scroll-margin-top:96px}
 </style>
 <script type="application/ld+json">
 {
@@ -931,7 +932,7 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <div class="cmp-row head"><div>Feature</div><div class="us">G-Pack</div><div class="them">Other online options</div></div>
       <div class="cmp-row"><div class="feat">200mg ginger in every capsule</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
       <div class="cmp-row"><div class="feat">An acid reducer, an anti-diarrheal, and ginger in one capsule</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
-      <div class="cmp-row"><div class="feat">Actives in each capsule</div><div class="us">Famotidine 27mg + Loperamide 2.6mg + ginger</div><div class="them">Single-ingredient products</div></div>
+      <div class="cmp-row"><div class="feat">Ingredients in each capsule</div><div class="us">Famotidine 27mg + Loperamide 2.6mg + ginger</div><div class="them">Single-ingredient products</div></div>
       <div class="cmp-row"><div class="feat">GI-focused doctors review every prescription</div><div class="us"><span class="yes">&#10003;</span></div><div class="them">Varies</div></div>
       <div class="cmp-row"><div class="feat">Compounded to your prescribed strength</div><div class="us"><span class="yes">&#10003;</span></div><div class="them">Fixed doses</div></div>
       <div class="cmp-row"><div class="feat">One $29 doctor review covers your whole order</div><div class="us"><span class="yes">&#10003;</span></div><div class="them">Often per item</div></div>
@@ -1037,9 +1038,9 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="foot-col"><h5>Guides</h5>
         <a href="/guides/managing-glp1-side-effects/">Managing GLP-1 side effects</a>
-        <a href="/guides/heartburn-vs-acid-reflux/">Heartburn vs acid reflux</a>
+        
         <a href="/guides/understanding-nausea-support/">Understanding nausea support</a>
-        <a href="/guides/how-doctor-review-works/">How doctor review works</a>
+        
       </div>
       <div class="foot-col"><h5>Company</h5>
         <a href="/about/">About</a><a href="/why-ginger/">Why ginger</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>
@@ -1309,7 +1310,7 @@ window.TGP = window.TGP || {};
   function sync(){ btn.innerHTML = added() ? 'Continue &rarr;' : 'Choose your plan &rarr;'; }
   btn.addEventListener('click', function(){
     if(added() && window.TGP && TGP.openPlan){ TGP.openPlan(); }
-    else if(buy){ buy.scrollIntoView({behavior:'smooth', block:'start'}); }
+    else if(buy){ (buy.querySelector('.buy-card')||buy).scrollIntoView({behavior:'smooth', block:'start'}); }
   });
   var io=new IntersectionObserver(function(entries){
     var e=entries[0], past = !e.isIntersecting && e.boundingClientRect.top < 0;

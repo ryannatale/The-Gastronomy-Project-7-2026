@@ -564,6 +564,7 @@ html{scroll-behavior:smooth}
 /* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
 .senja-embed{max-width:100%;overflow:hidden}
 html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.buy-card{scroll-margin-top:96px}
 </style>
 <script type="application/ld+json">
 {
@@ -787,7 +788,7 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">What's in each capsule</span><h2>Two things, working together</h2></div>
     <div class="bgrid">
-      <div class="bcard"><h4>The power of 2 in 1 capsule</h4><p>We are the first and only company to combine famotidine and ginger into one capsule. Two active ingredients in one easy to take formulation.</p></div>
+      <div class="bcard"><h4>The power of 2 in 1 capsule</h4><p>We are the first and only company to combine famotidine and ginger into one capsule. Two ingredients in one easy to take formulation.</p></div>
       <div class="bcard"><h4>Famotidine 25 mg</h4><p>A widely used acid reducer (an H2 blocker) that lowers stomach acid, formulated at 25 mg per capsule. A familiar option for heartburn and reflux, now paired with ginger.</p></div>
       <div class="bcard"><h4>200mg ginger root extract</h4><p>A measured, consistent dose of ginger, long used for nausea and digestive comfort, third-party tested for purity.</p></div>
     </div>
@@ -979,9 +980,9 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="foot-col"><h5>Guides</h5>
         <a href="/guides/managing-glp1-side-effects/">Managing GLP-1 side effects</a>
-        <a href="/guides/heartburn-vs-acid-reflux/">Heartburn vs acid reflux</a>
+        
         <a href="/guides/understanding-nausea-support/">Understanding nausea support</a>
-        <a href="/guides/how-doctor-review-works/">How doctor review works</a>
+        
       </div>
       <div class="foot-col"><h5>Company</h5>
         <a href="/about/">About</a><a href="/why-ginger/">Why ginger</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>
@@ -1251,7 +1252,7 @@ window.TGP = window.TGP || {};
   function sync(){ btn.innerHTML = added() ? 'Continue &rarr;' : 'Choose your plan &rarr;'; }
   btn.addEventListener('click', function(){
     if(added() && window.TGP && TGP.openPlan){ TGP.openPlan(); }
-    else if(buy){ buy.scrollIntoView({behavior:'smooth', block:'start'}); }
+    else if(buy){ (buy.querySelector('.buy-card')||buy).scrollIntoView({behavior:'smooth', block:'start'}); }
   });
   var io=new IntersectionObserver(function(entries){
     var e=entries[0], past = !e.isIntersecting && e.boundingClientRect.top < 0;

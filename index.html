@@ -91,21 +91,15 @@ header{background:var(--offwhite);border-bottom:1px solid var(--line)}
 
 /* ---------- hero (tight on mobile) ---------- */
 .hero{position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;
-  /* PLACEHOLDER for the real flat-lay (Productsontable5.png). Cowork: set background-image, position center-right. */
-  background:
-    radial-gradient(200px 200px at 68% 44%, rgba(255,184,46,.30), transparent 70%),
-    radial-gradient(230px 230px at 84% 76%, rgba(216,134,9,.18), transparent 72%),
-    linear-gradient(120deg,#F3ECDD 0%, #EFE6D2 55%, #E7DBC0 100%);
-  background-size:cover;background-position:center right}
-.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(253,250,244,.90) 0%, rgba(253,250,244,.62) 19%, rgba(253,250,244,.20) 40%, rgba(253,250,244,.20) 58%, rgba(253,250,244,.60) 79%, rgba(253,250,244,.90) 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0;background:url(images/Main_Hero.png) center bottom/cover;opacity:1;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.5) 50%,#000 64%);mask-image:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.5) 50%,#000 64%)}
+.hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(253,250,244,.72) 0%,rgba(253,250,244,.32) 15%,rgba(253,250,244,0) 30%)}
 .hero-inner{position:relative;z-index:2;padding:18px 0 24px;min-height:76vh;display:flex}
 .hero-copy{max-width:620px;width:100%;display:flex;flex-direction:column;justify-content:space-between}
 .hero h1{font-size:clamp(27px,7vw,56px);letter-spacing:-.01em;margin-bottom:9px}
 .hero h1 .accent{color:var(--amber)}
 .hero p.sub{font-size:clamp(14px,3.4vw,18px);max-width:34ch;margin-bottom:13px;color:#574e41;font-weight:400}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:0}
-.hero-rating{display:flex;align-items:center;gap:8px;margin-bottom:13px;font-size:12.5px;color:#5f5647;font-weight:500}
+.hero-rating{display:flex;align-items:center;gap:8px;margin-top:22px;margin-bottom:13px;font-size:12.5px;color:#5f5647;font-weight:500}
 .hero-rating .stars{color:var(--gold);letter-spacing:1px;font-size:14px}
 .trustbar{background:#fff;border-top:1px solid #ece3d2;border-bottom:1px solid #ece3d2;padding:13px 0}
 .trustbar .wrap{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding-left:14px;padding-right:14px}
@@ -468,6 +462,12 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 /* mobile: logo matches product-page sizing (36px); desktop unchanged at 46px */
 @media(min-width:880px){.brand-word{height:46px}}
+
+/* hero image: desktop = full image right, left fade; mobile handled by base rules (50% opacity full bg) */
+@media(min-width:880px){.hero-bg{opacity:1;background-position:center right;-webkit-mask-image:none;mask-image:none}.hero-scrim{background:linear-gradient(90deg,var(--offwhite) 0%,rgba(253,250,244,.92) 26%,rgba(253,250,244,.5) 46%,rgba(253,250,244,0) 68%)}}
+
+/* desktop only: founder video was rendering full-width; cap + center it */
+@media(min-width:880px){.fvideo{width:600px;max-width:100%;margin-left:auto;margin-right:auto}}
 </style>
 </head>
 <body>
@@ -573,14 +573,14 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
         <p class="sub">Each pairs a proven medicine with ginger in one daily capsule, reviewed by a U.S.-licensed doctor and shipped to your door.</p>
       </div>
       <div class="hero-bottom">
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#symptoms">Find your match &rarr;</a>
+        </div>
         <!-- Senja rating badge (live; links to Wall of Love, auto-updates) -->
       <div class="hero-rating">
         <script src="https://widget.senja.io/widget/752788b2-f784-4e18-8a9c-e1b7da33d413/platform.js" type="text/javascript" async></script>
         <div class="senja-embed" data-id="752788b2-f784-4e18-8a9c-e1b7da33d413" data-mode="shadow" data-lazyload="false" style="display:inline-block;max-width:100%"></div>
       </div>
-        <div class="hero-cta">
-          <a class="btn btn-gold" href="#symptoms">Find your match &rarr;</a>
-        </div>
       </div>
     </div>
   </div>
@@ -719,7 +719,7 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       <div class="cmp-row head"><div>Feature</div><div class="us">The Gastronomy Project</div><div class="them">Other telehealth</div></div>
       <div class="cmp-row"><div class="feat">GI-specialized care</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
       <div class="cmp-row"><div class="feat">Ginger paired with every medication</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
-      <div class="cmp-row"><div class="feat">Active plus ginger in one capsule</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
+      <div class="cmp-row"><div class="feat">Medicine plus ginger in one capsule</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
       <div class="cmp-row"><div class="feat">Support built for GLP-1 nausea</div><div class="us"><span class="yes">&#10003;</span></div><div class="them"><span class="no">&#10007;</span></div></div>
       <div class="cmp-row"><div class="feat">Right-sized to the lowest dose that works</div><div class="us"><span class="yes">&#10003;</span></div><div class="them">Varies</div></div>
       <div class="cmp-row"><div class="feat">One $29 doctor review covers your whole order</div><div class="us"><span class="yes">&#10003;</span></div><div class="them">Often per item</div></div>
@@ -778,14 +778,16 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <div class="faq-list">
       <details><summary>What is The Gastronomy Project?<span class="fq"></span></summary><div class="fa"><p>A doctor-led GI telehealth brand. We pair prescription-strength gut medicine with ginger in a single capsule, reviewed by U.S.-licensed doctors and shipped to your door. It was founded by Ryan Natale, MD, a board-certified emergency medicine doctor who deals with his own GI issues.</p></div></details>
       <details><summary>How does the $29 doctor review work?<span class="fq"></span></summary><div class="fa"><p>A U.S.-licensed doctor reviews your intake for a one-time $29 fee. That is the only charge today, and it is billed once per order, never per item. If a prescription is appropriate, your medication is billed separately. Completing intake does not guarantee a prescription.</p></div></details>
-      <details><summary>Why is ginger added to most of your products?<span class="fq"></span></summary><div class="fa"><p>Ginger has a long history of traditional use for digestive comfort and is generally well tolerated. We use 200mg of ginger root extract and pair it with the right active in a single capsule, so you get both together.</p></div></details>
+      <details><summary>Why is ginger added to most of your products?<span class="fq"></span></summary><div class="fa"><p>Ginger has a long history of traditional use for digestive comfort and is generally well tolerated. We use 200mg of ginger root extract and pair it with the right medicine in a single capsule, so you get both together.</p></div></details>
       <details><summary>Do you mix with any other natural compounds?<span class="fq"></span></summary><div class="fa"><p>Yes. Beyond ginger, our Ginger+ Mastic supplement combines Chios mastic gum with calcium carbonate for everyday digestive support. Mastic is a supplement, not a prescription, and is sold separately at masticbytgp.com.</p></div></details>
-      <details><summary>What does "compounded" mean?<span class="fq"></span></summary><div class="fa"><p>Compounded medications are prepared by a licensed U.S. pharmacy to a specific formula, in our case an active paired with ginger. Compounded medications are not reviewed by the FDA for safety, effectiveness, or quality.</p></div></details>
+      <details><summary>What does "compounded" mean?<span class="fq"></span></summary><div class="fa"><p>Compounded medications are prepared by a licensed U.S. pharmacy to a specific formula, in our case a medicine paired with ginger. Compounded medications are not reviewed by the FDA for safety, effectiveness, or quality.</p></div></details>
       <details><summary>Which states do you ship to?<span class="fq"></span></summary><div class="fa"><p>Availability varies by state. Your eligibility is confirmed during the medical intake before anything is prescribed.</p></div></details>
       <details><summary>How much does it cost, and is shipping included?<span class="fq"></span></summary><div class="fa"><p>Shipping is always free. Plans start as low as $32.50 a month if prescribed. The $29 doctor review is separate and is charged once per order.</p></div></details>
       <details><summary>Can I pause or cancel?<span class="fq"></span></summary><div class="fa"><p>Yes. You can pause or cancel anytime from your account. There is no long-term commitment.</p></div></details>
       <details><summary>Is my information private?<span class="fq"></span></summary><div class="fa"><p>This site does not collect health information. Your medical intake is handled on a separate, HIPAA-compliant system, and we never sell your data.</p></div></details>
       <details><summary>Are plans HSA/FSA eligible?<span class="fq"></span></summary><div class="fa"><p>Many plans are HSA/FSA eligible, and we can provide an itemized receipt. Eligibility depends on your specific plan and account.</p></div></details>
+      <details><summary>Who are your doctors?<span class="fq"></span></summary><div class="fa"><p>Your intake is reviewed and prescribed by U.S.-licensed doctors through MD Integrations, an independent telehealth physician network operating in all 50 states. It is LegitScript-approved and HIPAA, SOC 2 Type II, and ISO 27001 certified. They make every prescribing decision.</p></div></details>
+      <details><summary>Who is your partner pharmacy?<span class="fq"></span></summary><div class="fa"><p>Your medication is compounded and shipped by Curexa East, a PCAB-accredited, licensed U.S. compounding pharmacy in Egg Harbor Township, New Jersey.</p></div></details>
     </div>
   </div>
 </section>
@@ -796,9 +798,8 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
     <h2>Ready to take the first step?</h2>
     <p class="close-sub">A 3-minute questionnaire. A formula built specifically for you. All in one capsule.</p>
     <div class="close-bar">We just launched, but our team has been doing this for decades. Join the <strong>75+</strong> customers who have already found their plan.</div>
-    <a class="btn btn-gold close-go" href="/products/ginger-ondansetron/">Get started</a>
+    <button class="btn btn-gold close-go" data-quiz="general">Get started</button>
     <p class="close-fine">Options as low as $30. No commitment, and you can decide at the end.</p>
-    <a class="close-soft" href="#symptoms">Not sure yet? Answer 3 quick questions</a>
   </div>
 </section>
 
@@ -849,9 +850,9 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="foot-col"><h5>Guides</h5>
         <a href="/guides/managing-glp1-side-effects/">Managing GLP-1 side effects</a>
-        <a href="/guides/heartburn-vs-acid-reflux/">Heartburn vs acid reflux</a>
+        
         <a href="/guides/understanding-nausea-support/">Understanding nausea support</a>
-        <a href="/guides/how-doctor-review-works/">How doctor review works</a>
+        
       </div>
       <div class="foot-col"><h5>Company</h5>
         <a href="/about/">About</a><a href="/why-ginger/">Why ginger</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>

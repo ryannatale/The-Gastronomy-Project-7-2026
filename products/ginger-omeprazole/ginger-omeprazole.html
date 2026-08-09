@@ -586,6 +586,7 @@ html{scroll-behavior:smooth}
 /* mobile fix: contain review widgets (root cause) + sticky-safe horizontal-overflow clip */
 .senja-embed{max-width:100%;overflow:hidden}
 html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.buy-card{scroll-margin-top:96px}
 </style>
 <script type="application/ld+json">
 {
@@ -824,7 +825,7 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">Why people switch</span><h2>Built for taking less</h2></div>
     <div class="bgrid">
-      <div class="bcard"><h4>The power of 2 in 1 capsule</h4><p>We are the first and only company to combine omeprazole and ginger into one capsule. Two active ingredients in one easy to take formulation.</p></div>
+      <div class="bcard"><h4>The power of 2 in 1 capsule</h4><p>We are the first and only company to combine omeprazole and ginger into one capsule. Two ingredients in one easy to take formulation.</p></div>
       <div class="bcard"><h4>Take less omeprazole</h4><p>A lower dose can mean fewer side effects. So would you rather be on 40mg, or on a lower dose that still gets the job done? That is the whole reason we make <b>15mg and 25mg</b>, the in-between strengths you cannot get off the shelf.</p></div>
       <div class="bcard"><h4>What if a lower dose isn't enough?</h4><p>Taking less is not all-or-nothing. A doctor reviews where you are today, picks your starting strength, and can adjust it with you over time. The goal is the lowest dose that still works for you, with a doctor in your corner if it needs tuning.</p></div>
     </div>
@@ -1006,9 +1007,9 @@ html{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
       </div>
       <div class="foot-col"><h5>Guides</h5>
         <a href="/guides/managing-glp1-side-effects/">Managing GLP-1 side effects</a>
-        <a href="/guides/heartburn-vs-acid-reflux/">Heartburn vs acid reflux</a>
+        
         <a href="/guides/understanding-nausea-support/">Understanding nausea support</a>
-        <a href="/guides/how-doctor-review-works/">How doctor review works</a>
+        
       </div>
       <div class="foot-col"><h5>Company</h5>
         <a href="/about/">About</a><a href="/why-ginger/">Why ginger</a><a href="/how-it-works/">How it works</a><a href="/pricing/">Pricing</a><a href="/faq/">FAQ</a><a href="/contact/">Contact</a>
@@ -1280,7 +1281,7 @@ window.TGP = window.TGP || {};
   function sync(){ btn.innerHTML = added() ? 'Continue &rarr;' : 'Choose your plan &rarr;'; }
   btn.addEventListener('click', function(){
     if(added() && window.TGP && TGP.openPlan){ TGP.openPlan(); }
-    else if(buy){ buy.scrollIntoView({behavior:'smooth', block:'start'}); }
+    else if(buy){ (buy.querySelector('.buy-card')||buy).scrollIntoView({behavior:'smooth', block:'start'}); }
   });
   var io=new IntersectionObserver(function(entries){
     var e=entries[0], past = !e.isIntersecting && e.boundingClientRect.top < 0;
